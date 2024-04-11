@@ -19,9 +19,15 @@ nombreCarpetaNueva = sys.argv[2]
 ########################################################
 # #################################################### #
 
-# Ruta del archivo PDF original
-archivo_original = "C:/Users/luciomaspero/Desktop/Trabajos/Scripts/Archivos pdf Fabi/" + nombrePDF + ".pdf"
 
+
+# Ruta del archivo PDF original
+carpeta_de_proyecto = os.path.dirname(os.path.abspath(__file__))
+
+filename = os.path.join(carpeta_de_proyecto,"extraer_CUILs.py")
+exec(open(filename).read())
+
+archivo_original = os.path.join(carpeta_de_proyecto, nombrePDF) + ".pdf"
 
 # Ruta de la carpeta donde guardar las copias
 carpeta_destino = "G:/Unidades compartidas/SEGURIDAD E HIGIENE/Politicas de calidad 0823/" + nombreCarpetaNueva + "/"
